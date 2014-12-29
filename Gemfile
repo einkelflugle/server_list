@@ -19,3 +19,4 @@ gem 'haml'
 gem 'quiet_assets', group: :development
 gem 'devise', '~> 3.4.1'
 gem 'steam-condenser'
+gem 'whenever', '~> 0.9.4'

@@ -5,6 +5,23 @@ class UnturnedServer < ActiveRecord::Base
 
 	validate :server_must_be_online
 
+	def self.update_stats
+		UnturnedServer.all.each do |server|
+			server_data = ServerHandler.get_data(server.address)
+
+			server.map_name = server_data[:map_name]
+			server.num_players = server_data[:number_of_players]
+			server.max_players = server_data[:max_players]
+			server.dedicated = (server_data[:dedicated] == "d")
+			server.operating_system = server_data[:operating_system]
+			server.password_protected = server_data[:password_needed]
+			server.secure = server_data[:secure]
+			server.game_version = server_data[:game_version]
+
+			server.save
+		end
+	end
+
 	private
 
 		def unload_data
