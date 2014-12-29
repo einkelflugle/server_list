@@ -1,0 +1,7 @@
+%h2= link_to server.name, server
+
+%p
+	Address:
+	= server.address
+	- if server.private?
+		(Private)

@@ -1,0 +1,15 @@
+= form_for @server do |f|
+	= f.label :name
+	= f.text_field :name
+
+	= f.label :address
+	= f.text_field :address
+
+	= f.label :description
+	= f.text_area :description
+
+	= f.check_box :private
+	= f.label :private, "Make server private"
+	%br/
+
+	= f.submit "Submit"
