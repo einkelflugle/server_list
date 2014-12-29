@@ -10,7 +10,16 @@
 		= csrf_meta_tags
 
 	%body
-		= notice
-		= alert
-		= yield
+		= render 'shared/navbar'
+		
+		- flash.each do |key, value|
+			.row
+				.large-12.columns
+					.alert-box{"data-alert" => "", class: key}
+						= value
+						= link_to "&times;".html_safe, "#", class: "close"
+		
+		.row
+			= yield
+
 		= javascript_include_tag "application"
