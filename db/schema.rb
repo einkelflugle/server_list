@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229025355) do
+ActiveRecord::Schema.define(version: 20141229044120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "servers", force: true do |t|
+  create_table "unturned_servers", force: true do |t|
     t.string  "name"
     t.integer "num_players"
     t.integer "max_players"

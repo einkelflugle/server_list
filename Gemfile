@@ -18,3 +18,4 @@ gem 'compass-rails'
 gem 'haml'
 gem 'quiet_assets', group: :development
 gem 'devise', '~> 3.4.1'
+gem 'steam-condenser'

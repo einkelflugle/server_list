@@ -1,0 +1,7 @@
+%h2= link_to unturned_server.name, unturned_server
+
+%p
+	Address:
+	= unturned_server.address
+	- if unturned_server.private?
+		(Private)

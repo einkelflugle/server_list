@@ -1,0 +1,15 @@
+%h1= @unturned_server.name
+%p= @unturned_server.description
+
+%p
+	Address:
+	= @unturned_server.address
+
+- if @unturned_server.private?
+	%p Private server
+
+= link_to "Edit", edit_unturned_server_path(@unturned_server)
+|
+= link_to "Delete", @unturned_server, method: :delete, data: { confirm: "Are you sure?" }
+|
+= link_to "Back", root_path
