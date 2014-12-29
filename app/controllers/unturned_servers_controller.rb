@@ -11,7 +11,7 @@ class UnturnedServersController < ApplicationController
 	end
 
 	def create
-		@unturned_server = current_user.unturned_servers.create(server_params)
+		@unturned_server = current_user.unturned_servers.create(unturned_server_params)
 
 		if @unturned_server.save
 			redirect_to @unturned_server, notice: "Successfully created server."
@@ -44,8 +44,8 @@ class UnturnedServersController < ApplicationController
 
 	private
 
-		def server_params
-			params.require(:unturned_server).permit(:name, :address, :description, :private)
+		def unturned_server_params
+			params.require(:unturned_server).permit(:name, :address, :port, :description, :private)
 		end
 
 		def get_server

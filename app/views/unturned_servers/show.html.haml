@@ -1,6 +1,12 @@
 %h1= @unturned_server.name
 %p= @unturned_server.description
 
+%h3
+	Current Players: 
+	= @unturned_server.num_players
+	\/
+	= @unturned_server.max_players
+
 %p
 	Address:
 	= @unturned_server.address

@@ -20,6 +20,7 @@
 						= link_to "&times;".html_safe, "#", class: "close"
 		
 		.row
-			= yield
+			.large-12.columns
+				= yield
 
 		= javascript_include_tag "application"
